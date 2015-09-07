@@ -186,7 +186,7 @@ These methods are built onto the core members.
 ### Methods
 * `collectWhile` Moves forward while condition is true, and returns the string scanned
 * `skipWhile` Moves forward while condition is true
-* `moveToContent` oves to next non-whitespace character
+* `moveToContent` Moves to next non-whitespace character
 * `skipLine` Moves to next line
 * `collectLine` Moves to next line and returns current line
 
