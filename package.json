@@ -1,17 +1,24 @@
 {
-    "name": "fx23",
-    "version": "0.0.1",
-    "description": "Text scanner for Node.js",
-    "main": "src/main.js",
-    "author": "Mgen (http://www.mgenware.com)",
-    "homepage": "https://github.com/mgenware/fx23-node",
-    "bugs": "https://github.com/mgenware/fx23-node/issues",
-    "keywords": [ "text scanner" ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mgenware/fx23-node.git"
-    },
-    "license": "MIT",
-    "dependencies": {
-    }
+  "name": "fx23",
+  "version": "0.0.2",
+  "description": "Text scanner for Node.js",
+  "main": "lib/main.js",
+  "author": "Mgen (http://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/fx23-node",
+  "bugs": "https://github.com/mgenware/fx23-node/issues",
+  "keywords": [
+    "text scanner"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/fx23-node.git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  }
 }

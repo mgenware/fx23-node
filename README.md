@@ -1,6 +1,17 @@
 # Fx23
 Text scanner, available in [Node.js](https://github.com/mgenware/fx23-node), [C#](https://github.com/mgenware/fx23-csharp) and [Objective-C](https://github.com/mgenware/fx23-objc).
 
+Installation:
+```
+npm install fx23
+```
+
+Run tests:
+```
+npm test
+```
+*This project is tested on Node.js 4.1.1*
+
 # Example
 ```javascript
 var Fx23StringReader = require('fx23').stringReader;
