@@ -176,30 +176,30 @@ function printInfo(reader) {
 # API
 ## Fx23StringReader Class (Core Members)
 ### Properties
-* `collectLineInfo` Counts lineIndex and columnIndex during each read operation, default NO.
-* `index` The index position of current character.
-* `columnIndex` Zero-based column number of current character at current line
-* `lineIndex` Zero-based line number of current character
-* `visibleIndex` The index position of current character without newline characters
-* `length` Total length of the string
+* `collectLineInfo` counts lineIndex and columnIndex during each read operation, default NO.
+* `index` the index position of current character.
+* `columnIndex` zero-based column number of current character at current line.
+* `lineIndex` zero-based line number of current character.
+* `visibleIndex` the index position of current character without newline characters.
+* `length` total length of the string.
 
 ### Methods
-* `hasNext` Returns NO if no more character to read
-* `peek` Returns the next character without moving the internal index
-* `next` Returns the next character and move the internal index forward
-* `mark` Marks a flag at current position
-* `collect` Returns a sub-string from last marked position to current position
-* `nextOverride` Implementated by subclass
-* `peekOverride` Implementated by subclass
+* `hasNext` returns NO if no more character to read.
+* `peek` returns the next character without moving the internal index.
+* `next` returns the next character and move the internal index forward.
+* `mark` marks a flag at current position.
+* `collect` returns a sub-string from last marked position to current position.
+* `nextOverride` implementated by subclass.
+* `peekOverride` implementated by subclass.
 
 ## Fx23StringReader Class (Extension Members)
 These methods are built onto the core members.
 ### Methods
-* `collectWhile` Moves forward while condition is true, and returns the string scanned
-* `skipWhile` Moves forward while condition is true
-* `moveToContent` Moves to next non-whitespace character
-* `skipLine` Moves to next line
-* `collectLine` Moves to next line and returns current line
+* `collectWhile` moves forward while condition is true, and returns the string scanned.
+* `skipWhile` moves forward while condition is true.
+* `moveToContent` moves to next non-whitespace character.
+* `skipLine` moves to next line.
+* `collectLine` moves to next line and returns current line.
 
 
 # License
