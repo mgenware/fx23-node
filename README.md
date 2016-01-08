@@ -176,7 +176,7 @@ function printInfo(reader) {
 # API
 ## Fx23StringReader Class (Core Members)
 ### Properties
-* `collectLineInfo` counts lineIndex and columnIndex during each read operation, default NO.
+* `collectLineInfo` counts lineIndex and columnIndex during each read operation, default is false.
 * `index` the index position of current character.
 * `columnIndex` zero-based column number of current character at current line.
 * `lineIndex` zero-based line number of current character.
@@ -184,7 +184,7 @@ function printInfo(reader) {
 * `length` total length of the string.
 
 ### Methods
-* `hasNext` returns NO if no more character to read.
+* `hasNext` returns false if no more character to read.
 * `peek` returns the next character without moving the internal index.
 * `next` returns the next character and move the internal index forward.
 * `mark` marks a flag at current position.
