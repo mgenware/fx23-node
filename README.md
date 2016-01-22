@@ -1,4 +1,7 @@
 # Fx23
+
+[![Build Status](https://travis-ci.org/mgenware/fx23-node.svg?branch=master)](http://travis-ci.org/mgenware/fx23-node)
+
 Text scanner, available in [Node.js](https://github.com/mgenware/fx23-node), [C#](https://github.com/mgenware/fx23-csharp) and [Objective-C](https://github.com/mgenware/fx23-objc).
 
 Installation:
