@@ -147,7 +147,7 @@ function printInfo(reader) {
     } else {
         curChar = 'End of string';
     }
-    console.log("Current char: '%s'\nLine: %d\nColumn: %d\nIndex(without newline): %d\nIndex: %d\n",
+    console.log('Current char: "%s"\nLine: %d\nColumn: %d\nIndex(without newline): %d\nIndex: %d\n',
           curChar,
           reader.lineIndex + 1,
           reader.columnIndex + 1,
