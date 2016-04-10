@@ -13,7 +13,34 @@ Run tests:
 ```
 npm test
 ```
-*This project is tested on Node.js 4.1.1*
+
+# API
+## Fx23StringReader Class (Core Members)
+### Properties
+* `collectLineInfo` counts lineIndex and columnIndex during each read operation, default is false.
+* `index` the index position of current character.
+* `columnIndex` zero-based column number of current character at current line.
+* `lineIndex` zero-based line number of current character.
+* `visibleIndex` the index position of current character without newline characters.
+* `length` total length of the string.
+
+### Methods
+* `hasNext` returns false if no more character to read.
+* `peek` returns the next character without moving the internal index.
+* `next` returns the next character and move the internal index forward.
+* `mark` marks a flag at current position.
+* `collect` returns a sub-string from last marked position to current position.
+* `nextOverride` implementated by subclass.
+* `peekOverride` implementated by subclass.
+
+## Fx23StringReader Class (Extension Members)
+These methods are built onto the core members.
+### Methods
+* `collectWhile` moves forward while condition is true, and returns the string scanned.
+* `skipWhile` moves forward while condition is true.
+* `moveToContent` moves to next non-whitespace character.
+* `skipLine` moves to next line.
+* `collectLine` moves to next line and returns current line.
 
 # Example
 ```javascript
@@ -174,36 +201,6 @@ function printInfo(reader) {
           reader.index);
 }
 ```
-
-
-# API
-## Fx23StringReader Class (Core Members)
-### Properties
-* `collectLineInfo` counts lineIndex and columnIndex during each read operation, default is false.
-* `index` the index position of current character.
-* `columnIndex` zero-based column number of current character at current line.
-* `lineIndex` zero-based line number of current character.
-* `visibleIndex` the index position of current character without newline characters.
-* `length` total length of the string.
-
-### Methods
-* `hasNext` returns false if no more character to read.
-* `peek` returns the next character without moving the internal index.
-* `next` returns the next character and move the internal index forward.
-* `mark` marks a flag at current position.
-* `collect` returns a sub-string from last marked position to current position.
-* `nextOverride` implementated by subclass.
-* `peekOverride` implementated by subclass.
-
-## Fx23StringReader Class (Extension Members)
-These methods are built onto the core members.
-### Methods
-* `collectWhile` moves forward while condition is true, and returns the string scanned.
-* `skipWhile` moves forward while condition is true.
-* `moveToContent` moves to next non-whitespace character.
-* `skipLine` moves to next line.
-* `collectLine` moves to next line and returns current line.
-
 
 # License
 [MIT](LICENSE)
