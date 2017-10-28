@@ -1,24 +1,43 @@
 {
   "name": "fx23",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "description": "Text scanner for Node.js",
-  "main": "lib/main.js",
-  "author": "Mgen (http://www.mgenware.com)",
-  "homepage": "https://github.com/mgenware/fx23-node",
-  "bugs": "https://github.com/mgenware/fx23-node/issues",
+  "main": "dist/lib/main.js",
+  "types": "dist/lib/main.d.ts",
+  "author": "Mgen (https://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/fx23",
+  "bugs": "https://github.com/mgenware/fx23/issues",
   "keywords": [
-    "text scanner"
+    "task runner"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgenware/fx23-node.git"
+    "url": "https://github.com/mgenware/fx23.git"
   },
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "mocha": "*"
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "mocha": "*",
+    "typescript": "*",
+    "tslint": "*",
+    "copyfiles": "*"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run copy && mocha \"dist/test/*.js\"",
+    "dev_test": "mocha \"dist/test/*.js\"",
+    "build": "yarn test",
+    "compile": "tsc",
+    "dev": "yarn run clean && tsc -w",
+    "prepublishOnly": "yarn run test",
+    "lint": "tslint --project .",
+    "copy": "copyfiles \"test/data/**/*.*\" \"dist\"",
+    "clean:dist": "rm -rf dist",
+    "clean": "npm run clean:dist"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
   }
 }
