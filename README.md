@@ -1,16 +1,24 @@
 # Fx23
 
 [![Build Status](https://travis-ci.org/mgenware/fx23-node.svg?branch=master)](http://travis-ci.org/mgenware/fx23-node)
+[![npm version](https://badge.fury.io/js/fx23.svg)](https://badge.fury.io/js/fx23)
+[![Node.js Version](http://img.shields.io/node/v/fx23.svg)](https://nodejs.org/en/)
 
 Text scanner, available in [Node.js](https://github.com/mgenware/fx23-node), [C#](https://github.com/mgenware/fx23-csharp) and [Objective-C](https://github.com/mgenware/fx23-objc).
 
 Installation:
-```
-npm install fx23
+```sh
+# yarn
+yarn add fx23
+# npm
+npm install fx23 --save
 ```
 
 Run tests:
-```
+```sh
+# yarn
+yarn test
+# npm
 npm test
 ```
 
@@ -44,13 +52,14 @@ These methods are built onto the core members.
 
 # Example
 ```javascript
-var Fx23StringReader = require('fx23').stringReader;
+// ES6+
+const { Fx23StringReader } = require('fx23');
 
 // the string we need to scan
-var str = '   abcdef\r\na b c\nMgen123abc';
+const str = '   abcdef\r\na b c\nMgen123abc';
 
 // initialize the reader
-var reader = new Fx23StringReader(str);
+const reader = new Fx23StringReader(str);
 // counts lineIndex and columnIndex during each read operation
 reader.collectLineInfo = true;
 
@@ -73,8 +82,8 @@ printInfo(reader);
  */
 
 console.log('Read until "e"');
-console.log('Result -> %s', reader.collectWhile(function (c) {
-    return c != 'e';
+console.log('Result -> %s', reader.collectWhile((c) => {
+  return c != 'e';
 }));
 printInfo(reader);
 /*
@@ -130,8 +139,8 @@ printInfo(reader);
  */
 
 console.log('Skip to first number');
-reader.skipWhile(function (c) {
-    return isNaN(c);
+reader.skipWhile((c) => {
+  return isNaN(c);
 });
 printInfo(reader);
 /*
@@ -151,7 +160,7 @@ printInfo(reader);
 
 console.log('Read all numbers');
 console.log(reader.collectWhile(function (c) {
-    return !isNaN(c);
+  return !isNaN(c);
 }));
 printInfo(reader);
 /*
@@ -173,7 +182,7 @@ printInfo(reader);
 console.log('Read to end using mark and collect');
 reader.mark();
 while (reader.hasNext()) {
-    reader.next();
+  reader.next();
 }
 console.log('Result -> %s', reader.collect());
 /*
@@ -187,18 +196,18 @@ console.log('Result -> %s', reader.collect());
  */
 
 function printInfo(reader) {
-    var curChar;
-    if (reader.hasNext()) {
-        curChar = reader.peek();
-    } else {
-        curChar = 'End of string';
-    }
-    console.log("Current char: '%s'\nLine: %d\nColumn: %d\nIndex(without newline): %d\nIndex: %d\n",
-          curChar,
-          reader.lineIndex + 1,
-          reader.columnIndex + 1,
-          reader.visibleIndex,
-          reader.index);
+  var curChar;
+  if (reader.hasNext()) {
+    curChar = reader.peek();
+  } else {
+    curChar = 'End of string';
+  }
+  console.log("Current char: '%s'\nLine: %d\nColumn: %d\nIndex(without newline): %d\nIndex: %d\n",
+    curChar,
+    reader.lineIndex + 1,
+    reader.columnIndex + 1,
+    reader.visibleIndex,
+    reader.index);
 }
 ```
 
