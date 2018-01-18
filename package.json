@@ -33,7 +33,8 @@
     "lint": "tslint --project .",
     "copy": "copyfiles \"test/data/**/*.*\" \"dist\"",
     "clean:dist": "rm -rf dist",
-    "clean": "npm run clean:dist"
+    "clean": "npm run clean:dist",
+    "benchmark": "node ./benchmark/index.js"
   },
   "engines": {
     "node": ">=6.0.0"
