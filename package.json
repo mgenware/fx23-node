@@ -38,6 +38,10 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "dependencies": {
-  }
+  "files": [
+    "dist/lib",
+    ".gitignore",
+    "README.md",
+    "package.json"
+  ]
 }
