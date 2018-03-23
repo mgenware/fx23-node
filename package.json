@@ -5,14 +5,14 @@
   "main": "dist/lib/main.js",
   "types": "dist/lib/main.d.ts",
   "author": "Mgen (https://www.mgenware.com)",
-  "homepage": "https://github.com/mgenware/fx23",
-  "bugs": "https://github.com/mgenware/fx23/issues",
+  "homepage": "https://github.com/mgenware/fx23-node",
+  "bugs": "https://github.com/mgenware/fx23-node/issues",
   "keywords": [
     "task runner"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgenware/fx23.git"
+    "url": "https://github.com/mgenware/fx23-node.git"
   },
   "license": "MIT",
   "devDependencies": {
