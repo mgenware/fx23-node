@@ -34,7 +34,7 @@
     "copy": "copyfiles \"test/data/**/*.*\" \"dist\"",
     "clean:dist": "rm -rf dist",
     "clean": "npm run clean:dist",
-    "benchmark": "node ./benchmark/index.js"
+    "benchmark": "cd benchmark && yarn && node ./index.js && cd -"
   },
   "engines": {
     "node": ">=6.0.0"
