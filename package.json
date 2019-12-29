@@ -17,11 +17,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/mocha": "5.2.7",
-    "@types/node": "12.7.1",
+    "@types/node": "13.1.1",
     "copyfiles": "^2.1.1",
-    "mocha": "6.2.0",
-    "tslint": "5.18.0",
-    "typescript": "3.5.3"
+    "mocha": "6.2.2",
+    "tslint": "5.20.1",
+    "typescript": "3.7.4"
   },
   "scripts": {
     "test": "yarn run clean && yarn run compile && yarn run lint && yarn run copy && mocha \"dist/test/*.js\"",
